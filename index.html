@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Sakshi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle, #ffccf9, #cba6f7);
+      font-family: 'Great Vibes', cursive;
+      overflow: hidden;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }.typing {
+  font-size: 2em;
+  width: 60%;
+  white-space: nowrap;
+  border-right: 3px solid #fff;
+  overflow: hidden;
+  animation: typing 6s steps(40, end), blink .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 60% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+.hearts {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  transform: rotate(45deg);
+  animation: floatUp 6s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.balloons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.balloon {
+  width: 40px;
+  height: 60px;
+  background-color: #ff69b4;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: absolute;
+  animation: rise 10s infinite ease-in;
+}
+
+@keyframes rise {
+  0% { bottom: -60px; }
+  100% { bottom: 100%; }
+}
+
+.music {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="typing">
+  Happy birthday to my sweetheart ❤️ who makes my world a better place. I'm so lucky to have you in my life.  Wish you happiest birthday ever, you're my special one 💕, I luv u forever, and happy b'day dear 💌🌍.
+  </div>  <div class="hearts">
+    <!-- 20 glowing hearts -->
+    <script>
+      for (let i = 0; i < 20; i++) {
+        let heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.animationDelay = (Math.random() * 5) + 's';
+        document.querySelector('.hearts').appendChild(heart);
+      }
+    </script>
+  </div>  <div class="balloons">
+    <!-- 10 floating balloons -->
+    <script>
+      for (let i = 0; i < 10; i++) {
+        let balloon = document.createElement('div');
+        balloon.className = 'balloon';
+        balloon.style.left = Math.random() * 100 + '%';
+        balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 75%)`;
+        balloon.style.animationDuration = `${6 + Math.random() * 5}s`;
+        document.querySelector('.balloons').appendChild(balloon);
+      }
+    </script>
+  </div>  <div class="music">
+    <audio autoplay loop controls>
+      <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+      Your browser does not support the audio tag.
+    </audio>
+  </div>
+</body>
+  </html>
